@@ -18,7 +18,10 @@ def main():
     DARK_BROWN = '#9C745C'
     LIGHT_BROWN = '#D3B38C'
 
-    size = (320,320)
+    imgs = 'imgs/whites/bird.png'
+    piecesPos = [0,240]
+
+    size = (340,340)
     screen = pygame.display.set_mode(size)
     pygame.display.set_caption('Caturnya TEGUH SATYA!')
 
@@ -30,11 +33,17 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 is_not_closed = False
-        screen.fill(WHITE)
-            
+        screen.fill(WHITE)        
+        pawns = pygame.image.load('imgs/whites/pawns-01.png').convert_alpha()
+        pawns = pygame.transform.scale(pawns, (40, 40)) 
+        pygame.draw.rect(screen, LIGHT_BROWN, [0, 280, 40, 40], 0)
 
+        pygame.draw.rect(screen, LIGHT_BROWN, [0, 280, 40, 40], 0)
+        pygame.draw.rect(screen, DARK_BROWN, [0, 240, 40, 40], 0)
+        screen.blit(pawns,(0,280))
+        pygame.display.update()
+        # pygame.display.update()
 
-        pygame.display.flip()
 
 
 
